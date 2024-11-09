@@ -4,14 +4,16 @@ import React, { useState } from 'react';
 export default function Cipher() {
   const [isDocumentProcessed, setIsDocumentProcessed] = useState(false);
   const [processingType, setProcessingType] = useState(null); // 'translate' or 'simplify'
+  const [areButtonsHidden, setAreButtonsHidden] = useState(false);
 
   const handleProcessing = (type) => {
     setProcessingType(type);
     setIsDocumentProcessed(true);
+    setAreButtonsHidden(true); // Hide buttons after click
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-50">
       <div className="container mx-auto p-6">
         <div
           className={`${
@@ -26,7 +28,7 @@ export default function Cipher() {
           >
             {!isDocumentProcessed ? (
               // Initial Upload State
-              <div className="w-full max-w-md mx-auto p-6 text-center bg-white shadow rounded-lg">
+              <div className="w-full max-w-md mx-auto p-6 text-center bg-white shadow-lg rounded-lg">
                 <div className="border-2 border-dashed border-blue-200 rounded-lg p-8 hover:border-blue-400 transition-colors">
                   <Upload className="h-12 w-12 mx-auto text-blue-500 mb-4" />
                   <h3 className="text-lg font-semibold mb-2">Upload Medical Document</h3>
@@ -39,7 +41,7 @@ export default function Cipher() {
             ) : (
               // Processed Document State
               <div className="space-y-6 w-full max-w-lg">
-                <div className="p-4 bg-white shadow rounded-lg">
+                <div className="p-6 bg-white shadow-xl rounded-lg">
                   <div className="border-b p-2">
                     <h3 className="font-semibold text-lg">Symptoms</h3>
                   </div>
@@ -48,7 +50,7 @@ export default function Cipher() {
                   </div>
                 </div>
 
-                <div className="p-4 bg-white shadow rounded-lg">
+                <div className="p-6 bg-white shadow-xl rounded-lg">
                   <div className="border-b p-2">
                     <h3 className="font-semibold text-lg">Diagnosis</h3>
                   </div>
@@ -60,27 +62,29 @@ export default function Cipher() {
             )}
 
             {/* Button Row - Always Visible */}
-            <div className="flex space-x-4 w-full max-w-md mx-auto">
-              <button
-                onClick={() => handleProcessing('translate')}
-                className="flex-1 bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors"
-              >
-                Translate
-              </button>
-              <button
-                onClick={() => handleProcessing('simplify')}
-                className="flex-1 bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors"
-              >
-                Simplify
-              </button>
-            </div>
+            {!areButtonsHidden && (
+              <div className="flex space-x-4 w-full max-w-md mx-auto">
+                <button
+                  onClick={() => handleProcessing('translate')}
+                  className="flex-1 bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors"
+                >
+                  Translate
+                </button>
+                <button
+                  onClick={() => handleProcessing('simplify')}
+                  className="flex-1 bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors"
+                >
+                  Simplify
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Right Half - Carousel & Chatbot Section */}
           {isDocumentProcessed && (
             <div className="space-y-6 h-full transition-all duration-500">
               {/* Carousel Section */}
-              <div className="p-4 bg-white shadow rounded-lg h-1/2">
+              <div className="p-6 bg-white shadow-xl rounded-lg h-[50%]">
                 <div className="border-b p-2">
                   <h3 className="font-semibold text-lg">Recommended Next Steps</h3>
                 </div>
@@ -98,7 +102,7 @@ export default function Cipher() {
               </div>
 
               {/* Chat Section */}
-              <div className="p-4 bg-white shadow rounded-lg h-1/2 flex flex-col">
+              <div className="p-6 bg-white shadow-xl rounded-lg flex flex-col">
                 <div className="border-b p-2 flex items-center gap-2">
                   <MessageCircle className="h-5 w-5" />
                   <h3 className="font-semibold text-lg">Chat Assistant</h3>
