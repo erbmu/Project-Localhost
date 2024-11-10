@@ -70,18 +70,18 @@ export default function Cipher() {
                     Upload Your <span className="text-blue-500">Medical Document</span>
                   </h1>
                 </div>
-
-                <div className="p-8 bg-white/90 backdrop-blur-xl shadow-2xl rounded-xl">
-                  <div className="border-2 border-dashed border-blue-200 rounded-xl p-8 hover:border-blue-400 transition-colors">
-                    <Upload className="h-12 w-12 mx-auto text-blue-500 mb-4" />
-                    <h3 className="text-lg font-semibold mb-2 text-gray-800">Drag and Drop</h3>
-                    <p className="text-gray-500 mb-4">or click to browse your files</p>
-                    <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-lg hover:shadow-xl transition-all duration-300">
-                      Select File
-                    </button>
-                  </div>
-                </div>
-
+                <div className="p-8 bg-white/90 backdrop-blur-xl shadow-2xl rounded-xl text-center">
+  <div className="border-2 border-dashed border-blue-200 rounded-xl p-8 hover:border-blue-400 transition-colors">
+    <Upload className="h-12 w-12 mx-auto text-blue-500 mb-4" />
+    <h3 className="text-lg font-semibold mb-2 text-gray-800">Drag and Drop</h3>
+    <p className="text-gray-500 mb-4">or click to browse your files</p>
+    <div className="flex justify-center"> {/* Button centering container */}
+      <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-lg hover:shadow-xl transition-all duration-300">
+        Select File
+      </button>
+    </div>
+  </div>
+</div>
                 {/* Features Grid */}
                 <div className="grid grid-cols-2 gap-6 mb-8">
                   <div className="p-6 rounded-lg bg-gradient-to-r from-blue-50 to-blue-100 shadow-md hover:shadow-xl transition-all">
