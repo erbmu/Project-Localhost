@@ -1,5 +1,6 @@
 import { ArrowRight, FileText, MessageCircle, Shield, Upload } from 'lucide-react';
 import React, { useState } from 'react';
+import ContentBox from '../components/ContentBox';
 
 export default function Cipher() {
   const [isDocumentProcessed, setIsDocumentProcessed] = useState(false);
@@ -23,25 +24,6 @@ export default function Cipher() {
       '- Early pneumonia signs'
     ]);
   };
-
-  const ContentBox = ({ title, content, className }) => (
-    <div className={`bg-white/90 backdrop-blur-xl shadow-xl rounded-xl ${className}`}>
-      <div className="border-b border-gray-100 p-4">
-        <h3 className="font-semibold text-lg text-gray-800">{title}</h3>
-      </div>
-      <div className="p-4 overflow-y-auto">
-        {content.length > 0 ? (
-          <div className="space-y-2">
-            {content.map((item, index) => (
-              <p key={index} className="text-gray-600">{item}</p>
-            ))}
-          </div>
-        ) : (
-          <p className="text-gray-500">{title} will appear here after processing</p>
-        )}
-      </div>
-    </div>
-  );
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-50">
@@ -71,17 +53,17 @@ export default function Cipher() {
                   </h1>
                 </div>
                 <div className="p-8 bg-white/90 backdrop-blur-xl shadow-2xl rounded-xl text-center">
-  <div className="border-2 border-dashed border-blue-200 rounded-xl p-8 hover:border-blue-400 transition-colors">
-    <Upload className="h-12 w-12 mx-auto text-blue-500 mb-4" />
-    <h3 className="text-lg font-semibold mb-2 text-gray-800">Drag and Drop</h3>
-    <p className="text-gray-500 mb-4">or click to browse your files</p>
-    <div className="flex justify-center"> {/* Button centering container */}
-      <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-lg hover:shadow-xl transition-all duration-300">
-        Select File
-      </button>
-    </div>
-  </div>
-</div>
+                  <div className="border-2 border-dashed border-blue-200 rounded-xl p-8 hover:border-blue-400 transition-colors">
+                    <Upload className="h-12 w-12 mx-auto text-blue-500 mb-4" />
+                    <h3 className="text-lg font-semibold mb-2 text-gray-800">Drag and Drop</h3>
+                    <p className="text-gray-500 mb-4">or click to browse your files</p>
+                    <div className="flex justify-center">
+                      <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-lg hover:shadow-xl transition-all duration-300">
+                        Select File
+                      </button>
+                    </div>
+                  </div>
+                </div>
                 {/* Features Grid */}
                 <div className="grid grid-cols-2 gap-6 mb-8">
                   <div className="p-6 rounded-lg bg-gradient-to-r from-blue-50 to-blue-100 shadow-md hover:shadow-xl transition-all">
