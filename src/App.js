@@ -1,17 +1,16 @@
-// src/App.js
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Cipher from './pages/Cipher';
-import GetStarted from './pages/GetStarted';
+import HomePage from './pages/Home';
 import Login from './pages/Login';
+import Profile from './pages/Profile';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/start" element={<GetStarted />} />
-        <Route path="/cipher" element={<Cipher />} />
-        <Route path="/" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
