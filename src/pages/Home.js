@@ -23,9 +23,9 @@ const NavBar = () => (
           <button className="p-2 hover:bg-gray-100 rounded-full">
             <Bell className="h-6 w-6 text-gray-600" />
           </button>
-          <button className="p-2 hover:bg-gray-100 rounded-full">
+          <a href="/profile" className="p-2 hover:bg-gray-100 rounded-full">
             <User className="h-6 w-6 text-gray-600" />
-          </button>
+          </a>
         </div>
       </div>
     </div>

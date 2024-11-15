@@ -21,7 +21,7 @@ export default function Login() {
     e.preventDefault();
     // Here you would typically handle authentication
     console.log('Login credentials:', credentials);
-    navigate('/start');
+    navigate('/home');
   };
 
   return (
@@ -37,7 +37,7 @@ export default function Login() {
 
           {/* Main Content */}
           <h1 className="text-4xl font-extrabold text-gray-800 mb-8">
-            Welcome to <span className="text-blue-500">CIPHER</span>
+            Welcome to <span className="text-blue-500">Localhost</span>
           </h1>
 
           {/* Login Form */}
@@ -87,7 +87,7 @@ export default function Login() {
 
           {/* Additional Info */}
           <p className="mt-6 text-sm text-gray-500">
-            Secure Login | HIPAA Compliant | 24/7 Support
+            Mentoring | Networking | Public Forum
           </p>
         </div>
       </div>
