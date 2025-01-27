@@ -1,6 +1,7 @@
 import { Lock, User } from 'lucide-react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ export default function Login() {
 
           {/* Main Content */}
           <h1 className="text-4xl font-extrabold text-gray-800 mb-8">
-            Welcome to <span className="text-blue-500">Localhost</span>
+            Welcome to <span className="text-blue-500">BackDoor</span>
           </h1>
 
           {/* Login Form */}
@@ -85,9 +86,12 @@ export default function Login() {
             </button>
           </form>
 
-          {/* Additional Info */}
+          {/* Link to Signup */}
           <p className="mt-6 text-sm text-gray-500">
-            Mentoring | Networking | Public Forum
+            Don't have an account? {' '}
+            <Link to = "/Signup" className = "text-blue-500 hover:underline">
+             Sign up here
+            </Link>
           </p>
         </div>
       </div>
