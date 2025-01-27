@@ -5,6 +5,7 @@ import OrganizationLeaderboard from './pages/Leaderboard';
 import Login from './pages/Login';
 import OrganizationPage from './pages/OrganizationPage';
 import Profile from './pages/Profile';
+import Signup from './pages/Signup';
 
 function App() {
   return (
