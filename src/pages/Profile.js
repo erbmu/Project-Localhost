@@ -1,7 +1,8 @@
-import { Award, FileText, Github, Instagram, Linkedin, MessageCircle, Shield } from 'lucide-react';
+import { Award, ExternalLink, FileText, Github, Instagram, Linkedin, MessageCircle, Shield } from 'lucide-react';
 import React from 'react';
 
 export default function Profile() {
+  // Previous data objects remain the same
   const projects = [
     {
       title: "Network Security Scanner",
@@ -42,6 +43,14 @@ export default function Profile() {
       link: "#"
     }
   ];
+
+  // New organization data
+  const organization = {
+    name: "CyberGuard Solutions",
+    role: "Senior Security Analyst",
+    logo: "/api/placeholder/100/100",
+    link: "/orgs" // This would be your actual organization page route
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-50">
@@ -87,6 +96,28 @@ export default function Profile() {
               </div>
             </div>
 
+            {/* Organization Card - New Section */}
+            <div className="bg-white/90 backdrop-blur-xl shadow-2xl rounded-xl p-8">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Current Organization</h3>
+              <a 
+                href={organization.link}
+                className="group flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <img
+                  src={organization.logo}
+                  alt={organization.name}
+                  className="w-16 h-16 rounded-lg object-cover"
+                />
+                <div className="flex-1">
+                  <h4 className="font-semibold text-gray-800 group-hover:text-blue-600 flex items-center gap-2">
+                    {organization.name}
+                    <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </h4>
+                  <p className="text-gray-600">{organization.role}</p>
+                </div>
+              </a>
+            </div>
+
             {/* Certifications */}
             <div className="bg-white/90 backdrop-blur-xl shadow-2xl rounded-xl p-8">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Certifications</h3>
@@ -106,7 +137,7 @@ export default function Profile() {
             </div>
           </div>
 
-          {/* Middle and Right Columns */}
+          {/* Rest of the component remains the same */}
           <div className="lg:col-span-2 space-y-6">
             {/* Projects Section */}
             <div className="bg-white/90 backdrop-blur-xl shadow-2xl rounded-xl p-8">
