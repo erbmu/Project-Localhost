@@ -42,21 +42,38 @@ return (
         <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">Sign Up</h1>
         <input type = "hidden" value="prayer" />
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="username" className="block text-sm font-medium text-gray-700">
-              Username
-            </label>
-            <input
-              type="text"
-              name="username"
-              id="name"
-              value={formData.username}
-              onChange={handleChange}
-              placeholder="Enter your username"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            />
-          </div>
+        <div className="flex gap-4">
+      <div className="flex-1">
+        <label htmlFor="firstname" className="block text-sm font-medium text-gray-700">
+          First Name
+        </label>
+        <input
+        type="text"
+        name="firstname"
+        id="firstname"
+        value={formData.firstname}
+        onChange={handleChange}
+        placeholder="Enter your first name"
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        required
+        />
+      </div>
+        <div className="flex-1">
+        <label htmlFor="lastname" className="block text-sm font-medium text-gray-700">
+        Last Name
+        </label>
+        <input
+        type="text"
+        name="lastname"
+        id="lastname"
+        value={formData.lastname}
+        onChange={handleChange}
+        placeholder="Enter your last name"
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        required
+        />
+      </div>
+      </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email
@@ -83,6 +100,62 @@ return (
               value={formData.password}
               onChange={handleChange}
               placeholder="Enter your password"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="Date of Birth" className="block text-sm font-medium text-gray-700">
+              Date of Birth
+            </label>
+            <input
+              type="date"
+              name="dateofbirth"
+              id="dateofbirth"
+              value={formData.dateofbirth}
+              onChange={handleChange}
+              placeholder="Enter your date of birth"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="hiddenQuestion" className="block text-sm font-medium text-gray-700">
+              Hidden Question
+            </label>
+            <select
+              name="hiddenQuestion"
+              id="hiddenQuestion"
+              value={formData.hiddenQuestion}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            >
+              <option value="" disabled>
+                Select a hidden question
+              </option>
+              <option value="What is your favorite color?">
+                What is your favorite color?
+              </option>
+              <option value="What was your first pet's name?">
+                What was your first pet's name?
+              </option>
+              <option value="What is your mother's maiden name?">
+                What is your mother's maiden name?
+              </option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="Hidden Password" className="block text-sm font-medium text-gray-700">
+              Hidden Password
+            </label>
+            <input
+              type="hiddenpassword"
+              name="hiddenpassword"
+              id="hiddenpassword"
+              value={formData.hiddenpassword}
+              onChange={handleChange}
+              placeholder="Enter your password to the question above"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               required
             />
