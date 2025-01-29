@@ -1,6 +1,7 @@
 import { Award, ExternalLink, FileText, Github, Instagram, Linkedin, MessageCircle, Shield, LogOut } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {FaPlus} from 'react-icons/fa';
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -240,6 +241,13 @@ export default function Profile() {
                 </div>
               </div>
             </div>
+              {/*Adding post */}
+            <button
+              onClick = {() => navigate('/Writeup')}
+              className = 'fixed bottom-6 right-6 bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 transition'
+            >
+              <FaPlus size = {24} />
+            </button>
           </div>
         </div>
       </div>
