@@ -3,6 +3,8 @@ import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
+import Writeup from './pages/Writeup';
+import WriteupZone from './pages/WriteupZone';
 
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem("authToken");
@@ -23,6 +25,8 @@ function App() {
         {/* ✅ Protecting Routes */}
         <Route path="/home" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+        <Route path = "/Writeup" element = {<Writeup />} />
+        <Route path = "/WriteupZone" element = {<WriteupZone/>} />
         <Route path="/" element={<Navigate to="/login" replace />} />
       </Routes>
     </Router>
